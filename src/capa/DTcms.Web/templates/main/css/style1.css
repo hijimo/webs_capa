@@ -210,6 +210,24 @@ html,body,.main
     line-height:42px;
     border-top:solid 1px #d9d9d8;
     border-bottom:solid 1px #d9d9d8;
+    font-size:24px;
+    position:relative;
+}
+.product_type_itm_title a
+{
+    
+    color:#333;
+}
+.product_type_header_img
+{
+    width:36px;
+    height:36px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+    right:3px;
+    
 }
 .product_type_itm_img
 {

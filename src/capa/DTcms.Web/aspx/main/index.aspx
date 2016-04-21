@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 16/4/20 下午7:00:26.
-		本页面代码由DTcms模板引擎生成于 16/4/20 下午7:00:26. 
+		This page was created by DTcms Template Engine at 16/4/21 下午1:52:42.
+		本页面代码由DTcms模板引擎生成于 16/4/21 下午1:52:42. 
 	*/
 
 	base.OnInit(e);
@@ -82,12 +82,16 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\r\n                    \r\n                    <li class=\"product_type_itm\">\r\n                        <p class=\"product_type_itm_title\"> <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
 	templateBuilder.Append(linkurl("product_list",Utils.ObjectToStr(dr["id"])));
 
-	templateBuilder.Append("\">\r\n                    " + Utils.ObjectToStr(dr["title"]) + "\r\n                        </a></p>\r\n                        <div class=\" product_type_itm_content\">\r\n                            <img   class=\"product_type_itm_img tj_lazy\" data-original=\"");
+	templateBuilder.Append("\">\r\n                    " + Utils.ObjectToStr(dr["title"]) + "\r\n                        </a>\r\n                        <img class=\"product_type_header_img\" src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/images/product_header_index");
+	templateBuilder.Append(Utils.ObjectToStr(product_type.Rows.IndexOf(dr)));
+	templateBuilder.Append(".png\"\"  />\r\n                        </p>\r\n                        <div class=\" product_type_itm_content\">\r\n                            <img   class=\"product_type_itm_img tj_lazy\" data-original=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/product_index");
 	templateBuilder.Append(Utils.ObjectToStr(product_type.Rows.IndexOf(dr)));
 	templateBuilder.Append(".png\" />\r\n                            <div class=\"product_type_itm_child\">");
-	DataTable focusProdcut = get_article_list("product", 0, 5, "status=0");
+	DataTable focusProdcut = get_article_list("product", Utils.ObjectToStr(dr["id"]), 5, "status=0");
 
 	templateBuilder.Append("\r\n                                <ul class=\"product_type_child_list\">");
 	foreach(DataRow cdr in focusProdcut.Rows)

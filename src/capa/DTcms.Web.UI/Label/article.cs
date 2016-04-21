@@ -43,7 +43,16 @@ namespace DTcms.Web.UI
             }
             return dt;
         }
-
+        protected DataTable get_article_list(string channel_name, string category_id, int top, string strwhere)
+        {
+            DataTable dt = new DataTable();
+          //  category_id = int.Parse(category_id);
+            if (!string.IsNullOrEmpty(channel_name))
+            {
+                dt = new BLL.article().GetList(channel_name, int.Parse(category_id), top, strwhere, "sort_id asc,add_time desc").Tables[0];
+            }
+            return dt;
+        }
         /// <summary>
         /// 文章列表
         /// </summary>

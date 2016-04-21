@@ -38,10 +38,12 @@
                     <li class="product_type_itm">
                         <p class="product_type_itm_title"> <a title="{dr[title]}" href="<%linkurl("product_list",{dr[id]})%>">
                     {dr[title]}
-                        </a></p>
+                        </a>
+                        <img class="product_type_header_img" src="<%templateskin%>/images/product_header_index{product_type.Rows.IndexOf(dr)}.png""  />
+                        </p>
                         <div class=" product_type_itm_content">
                             <img   class="product_type_itm_img tj_lazy" data-original="<%templateskin%>/images/product_index{product_type.Rows.IndexOf(dr)}.png" />
-                            <div class="product_type_itm_child"><%set DataTable focusProdcut=get_article_list("product", 0, 5, "status=0")%>
+                            <div class="product_type_itm_child"><%set DataTable focusProdcut=get_article_list("product", {dr[id]}, 5, "status=0")%>
                                 <ul class="product_type_child_list"><%foreach(DataRow cdr in focusProdcut.Rows)%><li class="product_type_child_itm">
                                     <a class="product_type_child_itm_txt" title="{cdr[title]}" href="<%linkurl("product_show",{cdr[id]})%>">
                                          {cdr[title]}
