@@ -59,6 +59,7 @@ namespace DTcms.Web.UI
             if (!string.IsNullOrEmpty(channel_name))
             {
                 dt = new BLL.article().GetList(channel_name, category_id, top, strwhere, orderby).Tables[0];
+                
             }
             return dt;
         }
@@ -107,6 +108,21 @@ namespace DTcms.Web.UI
             {
                 dt = new BLL.article().GetList(channel_name, category_id, page_size, page_index, strwhere, "sort_id asc,add_time desc", out totalcount).Tables[0];
                 pagelist = Utils.OutPageList(page_size, page_index, totalcount, linkurl(_key, _params), 8);
+            }
+            else
+            {
+                totalcount = 0;
+                pagelist = "";
+            }
+            return dt;
+        }
+        protected DataTable get_article_list_en(string channel_name, int category_id, int page_size, int page_index, string strwhere, out int totalcount, out string pagelist, string _key, params object[] _params)
+        {
+            DataTable dt = new DataTable();
+            if (!string.IsNullOrEmpty(channel_name))
+            {
+                dt = new BLL.article().GetList(channel_name, category_id, page_size, page_index, strwhere, "sort_id asc,add_time desc", out totalcount).Tables[0];
+                pagelist = Utils.OutENPageList(page_size, page_index, totalcount, linkurl(_key, _params), 8);
             }
             else
             {

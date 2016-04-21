@@ -1,0 +1,5 @@
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Common/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Common/bin/Debug/DTcms.Common.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Common/bin/Debug/DTcms.Common.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Common/obj/Debug/DTcms.Common.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Common/obj/Debug/DTcms.Common.dll.mdb

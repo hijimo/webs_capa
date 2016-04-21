@@ -21,7 +21,7 @@ namespace DTcms.Web.UI.Page
             page = DTRequest.GetQueryInt("page", 1);
             category_id = DTRequest.GetQueryInt("category_id");
             BLL.article_category bll = new BLL.article_category();
-            model.title = "所有类别";
+            model.title = "";
             if (category_id > 0) //如果ID获取到，将使用ID
             {
                 if (bll.Exists(category_id))

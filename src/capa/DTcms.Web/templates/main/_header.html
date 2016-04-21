@@ -1,45 +1,40 @@
 ﻿<div class="header">
-  <div class="header-wrap">
-    <div class="section">
-      <div class="left-box">
-        <a class="logo" href="<%linkurl("index")%>">{site.name}</a>
-        <p class="nav">
-          <a href="<%linkurl("news")%>">资讯</a>
-          <a href="<%linkurl("goods")%>">商城</a>
-          <a href="<%linkurl("video")%>">视频</a>
-          <a href="<%linkurl("photo")%>">图片</a>
-          <a href="<%linkurl("down")%>">下载</a>
-        </p>
-      </div>
-      <div class="search">
-        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('<%linkurl("search")%>', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
-        <input class="submit" type="submit" onclick="SiteSearch('<%linkurl("search")%>', '#keywords');" value="搜索" />
-      </div>
-      <div class="right-box">
-      <script type="text/javascript">
-			$.ajax({
-				type: "POST",
-				url: "{config.webpath}tools/submit_ajax.ashx?action=user_check_login",
-				dataType: "json",
-				timeout: 20000,
-				success: function (data, textStatus) {
-					if (data.status == 1) {
-						$("#menu").prepend('<li class="line"><a href="<%linkurl("usercenter","exit")%>">退出</a></li>');
-						$("#menu").prepend('<li class="login"><em></em><a href="<%linkurl("usercenter","index")%>">会员中心</a></li>');
-					} else {
-						$("#menu").prepend('<li class="line"><a href="<%linkurl("register")%>">注册</a></li>');
-						$("#menu").prepend('<li class="login"><em></em><a href="<%linkurl("login")%>">登录</a></li>');
-					}
-				}
-			});
-		</script>
-        <ul id="menu">
-          <li>
-            <a href="<%linkurl("cart")%>">购物车<span id="shoppingCartCount"><script type="text/javascript" src="{config.webpath}tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
-          </li>
-          <li><a href="<%linkurl("content","contact")%>">联系我们</a></li>
+  <div class="header_logo">
+    <a href="<%linkurl("index")%>">
+        <span class="header_logo_img"></span><br/>
+        <span class="header_logo_txt">CAPA TOOLS CO.,LIMITED</span>
+    </a>
+  </div>
+  <a class="alibaba">
+  <!-- ALIBABA.COM TRADE ASSURANCE CODE BEGIN -->
+<script id="ali-ta-embed-script" src="//u.alicdn.com/js/5v/run/ta/embed.js?e=360" type="text/javascript" data-token="ID1t_vtHmE4fgz-DOP7DfDV05L5Nof58_pLv2iyumXlRag*" ></script>
+<!-- ALIBABA.COM TRADE ASSURANCE CODE END -->
+  </a>
+  <div class="header_wrap">
+    <ul class="header_menu">
+      <li class="header_menu_itm before1"><a href="<%linkurl("product_list",0)%>">Products</a>
+        <ul class="sub_menu">
+            <%set DataTable categoryList_header=get_category_child_list("product",0)%>
+                <%foreach(DataRow dr in categoryList_header.Rows)%>
+                    
+                    <li class="sub_menuitm">
+                        <a title="{dr[title]}" href="<%linkurl("product_list",{dr[id]})%>">
+                    {dr[title]}
+                        </a>
+                    </li>
+                <%/foreach %>
         </ul>
-      </div>
+      </li>
+      <li class="header_menu_itm"><a href="<%linkurl("aboutus")%>">About US</a></li>
+      <li class="header_menu_itm"><a href="<%linkurl("news_list",{0})%>">News</a></li>
+      <li class="header_menu_itm"><a href="<%linkurl("down_list,{0}")%>">Download</a></li>
+      <li class="header_menu_itm"><a href="<%linkurl("contact")%>">Contact US</a></li>
+      <li class="header_menu_itm"></li>
+    </ul>
+    <div class="header_searchs right">
+      <input type="text" value="" placeholder="Search Products" class="search_input">
+      <span class="header_search_btn"></span>
     </div>
+    <div class="clearfix"></div>
   </div>
 </div>

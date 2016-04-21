@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{site.title} - {site.name}</title>
+<meta content="{site.seo_keyword}" name="keywords" />
+<meta content="{site.seo_description}" name="description" />
+<link href="<%templateskin%>/css/style1.css" rel="stylesheet" type="text/css" />
+<link href="<%templateskin%>/css/about.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<%templateskin%>/css/animate.min.css">
+</head>
+
+<body>
+
+   <div class="main about">
+    <div class="wrap">
+      <div class="content">
+        <!--Header-->
+        <%template src="_header.html"%>
+        <!--/Header-->
+          <div class="content_body ">
+            <section class="about_section1">
+                <p class="about_part_title">About Us</p>
+                <div class="about_img_list">
+                    <img data-original="<%templateskin%>/images/about1.png" class="about_img_1 tj_lazy">
+                    <img data-original="<%templateskin%>/images/about2.png" class="about_img_2 tj_lazy">
+                    <img data-original="<%templateskin%>/images/about3.png" class="about_img_3 tj_lazy">
+                    <img data-original="<%templateskin%>/images/about4.png" class="about_img_4 tj_lazy">
+                    <img data-original="<%templateskin%>/images/about5.png" class="about_img_5 tj_lazy">
+                    <img data-original="<%templateskin%>/images/about6.png" class="about_img_6 tj_lazy">
+                    <img data-original="<%templateskin%>/images/about7.png" class="about_img_7 tj_lazy">
+                </div>
+            </section>
+            <section>
+                <p class="aboutus_txt">
+                    CAPA TOOLS is the premier manufacturer, focus on automotive refinishing industry in China. We design and manufacture tools to meet the needs of the most demanding professionals. Over the years, CAPA has dedicated itself to producing high performance products and providing professional service, to build business relations with customers from more than 15 countries and regions worldwide.
+                </p>
+            </section>
+            
+            <section>
+                <p class="about_part_title">Our Market</p>
+                <img class="aboutus_map tj_lazy" data-original="<%templateskin%>/images/aboutus_map.png" />
+            </section>
+            <section class="about_partners">
+                <p class="about_part_title">Our Partners</p>
+                <ul class="about_partners_list">
+                    <li class="about_partners_itm"></li>
+                    <li class="about_partners_itm"></li>
+                    <li class="about_partners_itm"></li>
+                </ul>
+            </section>
+             
+            
+          </div>
+        <!--Footer-->
+        <%template src="_footer.html"%>
+        <!--/Footer-->
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/jquery-1.9.0.min.js"></script>
+   <script type="text/javascript">
+    $(".tj_lazy").lazyload({ effect: "fadeIn" });
+   </script>
+</body>
+</html>

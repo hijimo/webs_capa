@@ -285,7 +285,7 @@ function sendEmail(username, sendurl) {
 var wait = 0; //计算变量
 function sendSMS(btnObj, valObj, sendUrl) {
 	if($(valObj).val() == ""){
-		dialog({title:'提示', content:'对不起，请填写手机号码后再获取！', okValue:'确定', ok:function (){}}).showModal();
+		dialog({title:'Tip', content:' Please Enter Phone ！', okValue:'确定', ok:function (){}}).showModal();
 		return false;
 	}
 	//发送AJAX请求
@@ -307,30 +307,30 @@ function sendSMS(btnObj, valObj, sendUrl) {
 					d.close().remove();
 				}, 2000);
 			} else {
-				$(btnObj).removeClass("gray").text("发送确认码");
+				$(btnObj).removeClass("gray").text("Send Code");
 				$(btnObj).bind("click", function(){
 					sendSMS(btnObj, valObj, sendurl); //重新绑定事件
 				});
-				dialog({title:'提示', content:data.msg, okValue:'确定', ok:function (){}}).showModal();
+				dialog({title:'Tip', content:data.msg, okValue:'Ok', ok:function (){}}).showModal();
 			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown){
-			$(btnObj).removeClass("gray").text("发送确认码");
+			$(btnObj).removeClass("gray").text("Send Code");
 			$(btnObj).bind("click", function(){
 				sendSMS(btnObj, valObj, sendurl); //重新绑定事件
 			});
-			dialog({title:'提示', content:"状态：" + textStatus + "；出错提示：" + errorThrown, okValue:'确定', ok:function (){}}).showModal();
+			dialog({title:'Tip', content:"Status：" + textStatus + "；Error：" + errorThrown, okValue:'Ok', ok:function (){}}).showModal();
 		}
 	});
 	//倒计时计算器
 	function time(){
 		if (wait == 0) {
-			$(btnObj).removeClass("gray").text("发送确认码");
+			$(btnObj).removeClass("gray").text("Send Code");
 			$(btnObj).bind("click", function(){
 				sendSMS(btnObj, valObj, sendurl); //重新绑定事件
 			});
 		}else{
-			$(btnObj).addClass("gray").text("重新发送(" + wait + ")");
+			$(btnObj).addClass("gray").text("Post Again(" + wait + ")");
 			wait--;
 			setTimeout(function() {
 				time(btnObj);
@@ -363,13 +363,13 @@ function AjaxInitForm(formObj, btnObj, isDialog, urlObj, callback){
     //表单提交前
     function formRequest(formData, jqForm, options) {
         $(btnObj).prop("disabled", true);
-        $(btnObj).val("提交中...");
+        $(btnObj).val("Posting...");
     }
 
     //表单提交后
     function formResponse(data, textStatus) {
 		if (data.status == 1) {
-            $(btnObj).val("提交成功");
+		    $(btnObj).val("success!");
 			//是否提示，默认不提示
 			if(isDialog == 1){
 				var d = dialog({content:data.msg}).show();
@@ -397,16 +397,16 @@ function AjaxInitForm(formObj, btnObj, isDialog, urlObj, callback){
 				}
 			}
         } else {
-			dialog({title:'提示', content:data.msg, okValue:'确定', ok:function (){}}).showModal();
+			dialog({title:'Tip', content:data.msg, okValue:'Ok', ok:function (){}}).showModal();
             $(btnObj).prop("disabled", false);
-            $(btnObj).val("再次提交");
+            $(btnObj).val("Post Again");
         }
     }
     //表单提交出错
     function formError(XMLHttpRequest, textStatus, errorThrown) {
-		dialog({title:'提示', content:'状态：'+textStatus+'；出错提示：'+errorThrown, okValue:'确定', ok:function (){}}).showModal();
+		dialog({title:'Tip', content:'Status：'+textStatus+'；Error：'+errorThrown, okValue:'Ok', ok:function (){}}).showModal();
         $(btnObj).prop("disabled", false);
-        $(btnObj).val("再次提交");
+        $(btnObj).val("Post Again");
     }
 }
 //显示评论AJAX分页列表
@@ -417,8 +417,8 @@ function AjaxPageList(listDiv, pageDiv, pageSize, pageCount, sendUrl, defaultAva
 	InitComment(0);//初始化评论数据
 	$(pageDiv).pagination(pageCount, {
 		callback: pageselectCallback,
-		prev_text: "« 上一页",
-		next_text: "下一页 »",
+		prev_text: "« Prev",
+		next_text: "Next »",
 		items_per_page:pageSize,
 		num_display_entries:3,
 		current_page:0,
@@ -438,7 +438,7 @@ function AjaxPageList(listDiv, pageDiv, pageSize, pageCount, sendUrl, defaultAva
             dataType: "json",
             url: sendUrl + "&page_size=" + pageSize + "&page_index=" + page_id,
             beforeSend: function (XMLHttpRequest) {
-				$(listDiv).html('<p style="line-height:35px;">正在狠努力加载，请稍候...</p>');
+				$(listDiv).html('<p style="line-height:35px;">loading...</p>');
 			},
 			success: function(data) {
 				var strHtml = '';
@@ -462,7 +462,7 @@ function AjaxPageList(listDiv, pageDiv, pageSize, pageCount, sendUrl, defaultAva
 						strHtml += '<div class="answer">' +
 						'<div class="meta">' +
 						'<span class="right time">' + data[i].reply_time + '</span>' +
-						'<span class="blue">管理员回复：</span>' +
+						'<span class="blue">Admin：</span>' +
 						'</div>' + 
 						'<p>' + unescape(data[i].reply_content) + '</p>' +
 						'</div>';
@@ -472,7 +472,7 @@ function AjaxPageList(listDiv, pageDiv, pageSize, pageCount, sendUrl, defaultAva
 				$(listDiv).html(strHtml);
             },
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
-				$(listDiv).html('<p style="line-height:35px;text-align:center;border:1px solid #f7f7f7;">暂无评论，快来抢沙发吧！</p>');
+				$(listDiv).html('<p style="line-height:35px;text-align:center;border:1px solid #f7f7f7;">No Comments！</p>');
 			}
         });
     }

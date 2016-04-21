@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Products - {site.name}</title>
+<meta content="{site.seo_keyword}" name="keywords" />
+<meta content="{site.seo_description}" name="description" />
+<link href="<%templateskin%>/css/style1.css" rel="stylesheet" type="text/css" />
+<link href="{config.webpath}css/pagination.css" rel="stylesheet" />
+<link href="<%templateskin%>/css/product.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<%templateskin%>/css/animate.min.css">
+</head>
+
+<body>
+
+   <div class="main product">
+    <div class="wrap">
+      <div class="content">
+        <!--Header-->
+        <%template src="_header.html"%>
+        <!--/Header-->
+          <div class="content_body ">
+              <div class="product_left_menu">
+                  <p class="product_left_title">
+                    Product Categories
+                  </p>
+                  <ul class="product_left_list">
+                        <%set DataTable categoryList=get_category_child_list("product",0)%>
+                        <%foreach(DataRow dr in categoryList.Rows)%>
+                            
+
+                            <li class="product_left_list_item">
+                            <a title="{dr[title]}" href="<%linkurl("product_list",{dr[id]})%>">
+                            {dr[title]}
+                                </a></li>
+
+                        <%/foreach %>
+                  </ul>
+              </div>
+              <div class="product_right_body">
+                  <div class="right_body_nav_title">
+                        Home >> {model.title}
+                  </div>
+                  <div class="right_body_header">
+                      <span class="right_body_header_name">
+<%csharp%>
+templateBuilder.Append(Utils.ObjectToStr({model.title}!="" ? {model.title} : "All Products"  ));
+                                       
+                                    <%/csharp%></span>
+                  </div>
+                  <div class="right_body_sortbar">
+                    <label>Sort By</label>
+                    <label></label>  
+                  </div>
+                  <div class="right_body_content tj_right_body_content">
+                      
+                       <%set DataTable newsList1=get_article_list_en(channel, category_id, pagesize, page, "status=0", out totalcount, out pagelist, "product_list", category_id, "__id__")%><!--取得一个分页DataTable-->
+                      <%foreach(DataRow dr in newsList1.Rows)%>
+                      <div class="product_item tj_product_item">
+                        <a title="{dr[title]}" href="<%linkurl("product_show",{dr[id]})%>">
+                          <div class="product_item_shadow">
+                          </div>
+                          <img src="" data-original="{dr[img_url]}" class="product_item_img tj_product_item_img tj_lazy"  />
+                          <span class="product_item_txt">{dr[title]}</span>
+                          </a>
+                      </div>
+                      <%/foreach %>
+                      
+                        <!--页码列表-->
+                        <div class="page-box">
+                          <div class="digg">{pagelist}</div>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                        <!--/页码列表-->
+                </div>
+            </div>
+            
+            
+        </div>
+        <!--Footer-->
+        <%template src="_footer.html"%>
+        <!--/Footer-->
+
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript">
+        $(".tj_lazy").lazyload({ effect: "fadeIn" });
+    </script>
+</body>
+</html>

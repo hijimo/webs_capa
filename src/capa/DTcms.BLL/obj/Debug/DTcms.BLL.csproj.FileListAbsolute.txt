@@ -89,3 +89,16 @@ E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.BLL\bin\Debug\DTcms.DBUtilit
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.BLL\obj\Debug\ResolveAssemblyReference.cache
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.BLL\obj\Debug\DTcms.BLL.dll
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.Common.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.Model.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.BLL\obj\Debug\DTcms.BLL.pdb

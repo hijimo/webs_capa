@@ -1,0 +1,16 @@
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/obj/Debug/DTcms.Web.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.API.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.API.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.BLL.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.BLL.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.Common.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.Common.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.Model.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.Model.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.Web.UI.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.Web.UI.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.DAL.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.DAL.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.DBUtility.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.Web/bin/DTcms.DBUtility.dll.mdb

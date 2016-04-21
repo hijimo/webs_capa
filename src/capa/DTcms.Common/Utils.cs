@@ -1253,6 +1253,79 @@ namespace DTcms.Common
             pageStr.Append(lastStr + lastBtn);
             return pageStr.ToString();
         }
+        public static string OutENPageList(int pageSize, int pageIndex, int totalCount, string linkUrl, int centSize)
+        {
+            //计算页数
+            if (totalCount < 1 || pageSize < 1)
+            {
+                return "";
+            }
+            int pageCount = totalCount / pageSize;
+            if (pageCount < 1)
+            {
+                return "";
+            }
+            if (totalCount % pageSize > 0)
+            {
+                pageCount += 1;
+            }
+            if (pageCount <= 1)
+            {
+                return "";
+            }
+            StringBuilder pageStr = new StringBuilder();
+            string pageId = "__id__";
+            string firstBtn = "<a href=\"" + ReplaceStr(linkUrl, pageId, (pageIndex - 1).ToString()) + "\">«Prev</a>";
+            string lastBtn = "<a href=\"" + ReplaceStr(linkUrl, pageId, (pageIndex + 1).ToString()) + "\">Next»</a>";
+            string firstStr = "<a href=\"" + ReplaceStr(linkUrl, pageId, "1") + "\">1</a>";
+            string lastStr = "<a href=\"" + ReplaceStr(linkUrl, pageId, pageCount.ToString()) + "\">" + pageCount.ToString() + "</a>";
+
+            if (pageIndex <= 1)
+            {
+                firstBtn = "<span class=\"disabled\">«Prev</span>";
+            }
+            if (pageIndex >= pageCount)
+            {
+                lastBtn = "<span class=\"disabled\">Next»</span>";
+            }
+            if (pageIndex == 1)
+            {
+                firstStr = "<span class=\"current\">1</span>";
+            }
+            if (pageIndex == pageCount)
+            {
+                lastStr = "<span class=\"current\">" + pageCount.ToString() + "</span>";
+            }
+            int firstNum = pageIndex - (centSize / 2); //中间开始的页码
+            if (pageIndex < centSize)
+                firstNum = 2;
+            int lastNum = pageIndex + centSize - ((centSize / 2) + 1); //中间结束的页码
+            if (lastNum >= pageCount)
+                lastNum = pageCount - 1;
+            pageStr.Append("<span>All " + totalCount + " Records</span>");
+            pageStr.Append(firstBtn + firstStr);
+            if (pageIndex >= centSize)
+            {
+                pageStr.Append("<span>...</span>\n");
+            }
+            for (int i = firstNum; i <= lastNum; i++)
+            {
+                if (i == pageIndex)
+                {
+                    pageStr.Append("<span class=\"current\">" + i + "</span>");
+                }
+                else
+                {
+                    pageStr.Append("<a href=\"" + ReplaceStr(linkUrl, pageId, i.ToString()) + "\">" + i + "</a>");
+                }
+            }
+            if (pageCount - pageIndex > centSize - ((centSize / 2)))
+            {
+                pageStr.Append("<span>...</span>");
+            }
+            pageStr.Append(lastStr + lastBtn);
+            return pageStr.ToString();
+        }
         #endregion
 
         #region URL处理

@@ -56,6 +56,22 @@ namespace DTcms.Web.UI
             return modelt;
         }
 
+        public string getday(params object [] date)
+        {
+            if (date.Length > 0)
+            {
+                return Convert.ToDateTime(date[0]).ToString("dd");
+            }
+            return "";
+        }
+        public string getenmonth(params object [] date)
+        {
+            if (date.Length > 0)
+            {
+                return Convert.ToDateTime(date[0]).ToString("MM / yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+            }
+            return "";
+        }
         /// <summary>
         /// 返回URL重写统一链接地址
         /// </summary>

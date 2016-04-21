@@ -33,3 +33,7 @@ E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Common\bin\Debug\DTcms.Commo
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Common\obj\Debug\ResolveAssemblyReference.cache
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Common\obj\Debug\DTcms.Common.dll
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Common\obj\Debug\DTcms.Common.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Common\bin\Debug\DTcms.Common.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Common\bin\Debug\DTcms.Common.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Common\obj\Debug\DTcms.Common.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Common\obj\Debug\DTcms.Common.pdb

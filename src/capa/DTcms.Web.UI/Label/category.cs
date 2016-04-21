@@ -68,6 +68,17 @@ namespace DTcms.Web.UI
         protected DataTable get_category_child_list(string channel_name, int parent_id)
         {
             return new BLL.article_category().GetChildList(parent_id, channel_name);
+            
+        }
+        protected DataTable get_category_child_list(string channel_name, int parent_id, int top)
+        {
+            DataTable dt=  new BLL.article_category().GetChildList(parent_id, channel_name);
+            while (dt.Rows.Count > top)
+            {
+                dt.Rows.RemoveAt(top);
+            }
+            return dt;
+
         }
 
         #region 私有方法===========================================

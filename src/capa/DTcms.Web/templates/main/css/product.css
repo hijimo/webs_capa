@@ -1,0 +1,132 @@
+﻿.product .content_body
+{
+    padding:5px;
+    min-height:500px;
+    position:relative;
+}
+.product_left_menu
+{
+    width:250px;
+    padding: 8px 5px 25px 5px;
+    box-sizing:border-box;
+    position:absolute;
+    left:5px;
+    background-color:#fff9f7;
+    border-right:solid 1px #d9d9d8;
+    border-bottom:solid 1px #d9d9d8;
+}
+.product_left_list
+{
+   
+    color:#787775;
+    font-size:18px;
+    margin-top:12px;
+}
+.product_left_title
+{
+    color:#f64e29;
+    font-size:24px;
+}
+.product_left_list_item
+{
+    height: 32px;
+    line-height: 32px;
+    transition: opacity 0.2s ease;
+    list-style: url(../images/icon_point.png);
+    border-bottom: #e5e5e5 1px dotted;
+    border-bottom-style: dotted;
+    cursor: pointer;
+    list-style-position: inside;
+    padding: 4px 0;
+    padding-left: 20px;
+}
+
+.product_left_list_item:hover
+{
+    opacity:0.7;
+}
+.product_left_list_item a
+{
+    color:inherit;
+}
+.product_left_list_item:hover a
+{
+    color:inherit;
+}
+.product_right_body
+{
+    margin-left:264px;
+}
+.right_body_nav_title
+{
+    line-height:30px;
+    height:30px;
+    background-color:#fff9f7;
+    color:#010101;
+    border-radius:0 0 3px 3px;
+}
+.right_body_header
+{
+    width:736px;
+    height:90px;
+    margin:10px auto;
+    position:relative;
+    
+    background-image:url(../images/right_header.png);
+}
+.right_body_header_name
+{
+    position:absolute;
+    font-size:36px;
+    color:#ff6746;
+    height:1em;
+    line-height:1em;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+}
+.right_body_sortbar
+{
+    height:34px;
+    line-height:34px;
+    color:#626262;
+}
+.product_item
+{
+    padding:12px;
+    text-align:center;
+    display:inline-block;
+    position:relative;
+    width:212px;
+    
+    transition: all 0.3s ease;
+}
+.product_item_shadow
+{
+    position:absolute;
+    transition: all 0.3s ease;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+.product_item:hover .product_item_shadow
+{
+    box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.16);
+}
+.product_item_img
+{
+    width:100%;
+    height:212px;
+    border:solid 1px #dfdfdf;
+    margin-bottom:16px;
+}
+.product_item_txt
+{
+    font-size:16px;
+    display:inline-block;
+    height:3em;
+    overflow:hidden;
+    color:#343a50;
+}

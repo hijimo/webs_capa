@@ -24,10 +24,10 @@
           <textarea id="txtContent" name="txtContent" class="input" datatype="*" sucmsg=" "></textarea>
         </div>
         <div class="subcon">
-          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="提交评论（Ctrl+Enter）" />
-          <span>验证码：</span>
-          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="请填写4位验证码" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
-          <a href="javascript:;" onclick="ToggleCode(this, '{config.webpath}tools/verify_code.ashx');return false;"><img src="{config.webpath}tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> 看不清楚？</a>
+          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="Post（Ctrl+Enter）" />
+          <span>Code：</span>
+          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="4 bit Code" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
+          <a href="javascript:;" onclick="ToggleCode(this, '{config.webpath}tools/verify_code.ashx');return false;"><img src="{config.webpath}tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> can not see clearly？</a>
         </div>
       </form>
     </div>

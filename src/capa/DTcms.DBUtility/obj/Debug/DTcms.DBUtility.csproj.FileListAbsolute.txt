@@ -47,3 +47,10 @@ E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.DBUtility\bin\Debug\DTcms.Co
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb

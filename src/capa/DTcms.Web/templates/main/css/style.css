@@ -105,22 +105,6 @@ body{ text-align:center; background:#fff; *position:relative; }
 
 /*页面头部
 ----------------------------------------------*/
-.header{ width:100%; height:55px; }
-	.header-wrap{ position:fixed; top:0; left:0; width:100%; height:55px; text-align:center; background:rgba(48,131,235,0.9); *background:#3083eb; *filter:alpha(opacity=90); z-index:300; }
-	.header-wrap .left-box .logo{ margin:0 20px 0 0; display:block; float:left; width:110px; height:55px; text-indent:-9999px; background:url(../images/logo.png) no-repeat 0 center; overflow:hidden; }
-	.header-wrap .left-box .nav{ display:inline-block; float:left; height:55px; font-size:14px; letter-spacing:1px; }
-	.header-wrap .left-box .nav a{ display:inline-block; margin:10px 0; padding:0 8px; line-height:35px; height:35px;  color:#fff; opacity:0.9; }
-	.header-wrap .left-box .nav a:hover{ border-radius:3px; color:#fff; background:#104C99; }
-	.header-wrap .search{ position:relative; display:block; float:left; margin:13px 0 0 20px; }
-	.header-wrap .search .input{ display:block; margin:0; padding:3px 30px 3px 10px; width:150px; height:20px; line-height:20px; color:#fff; border:1px solid #76b5dc; border-radius:2px; background:none; }
-	.header-wrap .search .submit{ position:absolute; top:0; right:0; display:block; width:30px; height:28px; line-height:30px; text-indent:-9999px; color:#fff; border:none; background:url(../images/search.png) no-repeat center; cursor:pointer; _text-indent:0; overflow:hidden; }
-	.header-wrap .right-box{ float:right; display:block; margin:13px 0; height:28px; }
-	.header-wrap .right-box li{ float:left; margin-left:15px; }
-	.header-wrap .right-box li.line{ margin-left:10px; background:url(../images/line-1.png) no-repeat 0 center; }
-	.header-wrap .right-box li.line a{ margin:0 10px; }
-	.header-wrap .right-box li em{ float:left; display:inline-block; margin:7px 8px auto auto; width:17px; height:15px; }
-	.header-wrap .right-box li.login em{ background:url(../images/user.png) left center no-repeat; }
-	.header-wrap .right-box li a{ display:inline-block; color:#fff; font-size:12px; height:28px; line-height:28px; }
 
 /*内容样式
 ----------------------------------------------*/

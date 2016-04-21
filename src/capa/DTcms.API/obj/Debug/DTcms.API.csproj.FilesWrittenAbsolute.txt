@@ -1,0 +1,15 @@
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.API.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.API.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/obj/Debug/DTcms.API.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/obj/Debug/DTcms.API.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.BLL.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.BLL.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.Common.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.Common.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.Model.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.Model.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.DAL.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.DAL.dll.mdb
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.DBUtility.dll
+/Users/jimo/Documents/git/capa_webs/webs_capa/src/capa/DTcms.API/bin/Debug/DTcms.DBUtility.dll.mdb

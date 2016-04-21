@@ -1,19 +1,52 @@
-﻿<div class="footer clearfix">
-  <div class="foot-nav">
-    <a target="_blank" href="<%linkurl("index")%>">首 页</a>|
-    <a target="_blank" href="<%linkurl("content","about")%>">关于我们</a>|
-    <a target="_blank" href="<%linkurl("news")%>">新闻资讯</a>|
-    <a target="_blank" href="<%linkurl("goods")%>">购物商城</a>|
-    <a target="_blank" href="<%linkurl("video")%>">视频专区</a>|
-    <a target="_blank" href="<%linkurl("down")%>">资源下载</a>|
-    <a target="_blank" href="<%linkurl("photo")%>">图片分享</a>|
-    <a target="_blank" href="<%linkurl("feedback")%>">留言反馈</a>|
-    <a target="_blank" href="<%linkurl("link")%>">友情链接</a>|
-    <a target="_blank" href="<%linkurl("content","contact")%>">联系我们</a>
+﻿<div class="footer">
+  <div class="footer_content">
+    
+    <div class="footer_conent_part">
+        <div class="footer_content_part_title">Products</div>
+        <ul class="footer_content_part_body">
+            
+            <%set DataTable categoryList_footer=get_category_child_list("product",0,7)%>
+                <%foreach(DataRow dr in categoryList_footer.Rows)%>
+                    
+                    <li class="footer_part_li">
+                        <a title="{dr[title]}" href="<%linkurl("product_list",{dr[id]})%>">
+                    {dr[title]}
+                        </a>
+                    </li>
+                <%/foreach %>
+       </ul>
+    </div>
+    <div class="footer_conent_part">
+      
+        <div class="footer_content_part_title">News</div>
+        <ul class="footer_content_part_body">
+          <%set DataTable categoryList_footer2=get_category_child_list("news",0,7)%>
+                <%foreach(DataRow dr in categoryList_footer2.Rows)%>
+                    
+                    <li class="footer_part_li">
+                        <a title="{dr[title]}" href="<%linkurl("news_list",{dr[id]})%>">
+                            {dr[title]}
+                        </a>
+                    </li>
+                <%/foreach %>
+        </ul>
+    </div>
+    <div class="footer_conent_part">
+      
+        <div class="footer_content_part_title">Contacts</div>
+        <ul class="footer_content_part_body">
+          <li class="contactitm"><i></i>{site.address}</li>
+          <li class="contactitm"><i></i>{site.tel}</li>
+          <li class="contactitm"><i></i>{site.email}</li>
+        </ul>
+    </div>
+
+
   </div>
   <div class="copyright">
-    <p>版权所有 <%=site.company%> 粤ICP备11064298号 DTcms版本号：<%=Utils.GetVersion()%></p>
-    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
-    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+    <span>Copyright &copy; 2013-2016 CAPA Tools Co.,Limted. ICP:浙12345</span>
+    <a href="" class="icn_youtube right mt10"></a>
+    <a href="" class="icn_facebook right mt10"></a>
+    
   </div>
 </div>

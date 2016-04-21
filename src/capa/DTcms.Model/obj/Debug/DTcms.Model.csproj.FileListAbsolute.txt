@@ -47,3 +47,10 @@ E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Model\bin\Debug\DTcms.Common
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Model\obj\Debug\ResolveAssemblyReference.cache
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Model\obj\Debug\DTcms.Model.dll
 E:\动力启航\DTcms\发布源码\4.0\ACCESS\DTcms.Model\obj\Debug\DTcms.Model.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\bin\Debug\DTcms.Model.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\bin\Debug\DTcms.Model.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\bin\Debug\DTcms.Common.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\bin\Debug\DTcms.Common.pdb
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\obj\Debug\DTcms.Model.dll
+\\Mac\Home\Documents\git\capa_webs\webs_capa\src\capa\DTcms.Model\obj\Debug\DTcms.Model.pdb

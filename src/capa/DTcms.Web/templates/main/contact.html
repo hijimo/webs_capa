@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{model.title} - {site.name}</title>
+<meta content="{model.seo_keywords}" name="keywords" />
+<meta content="{model.seo_description}" name="description" />
+<link href="<%templateskin%>/css/style1.css" rel="stylesheet" type="text/css" />
+<link href="<%templateskin%>/css/contact.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<%templateskin%>/css/animate.min.css">
+</head>
+
+<body>
+
+   <div class="main contact">
+    <div class="wrap">
+      <div class="content">
+        <!--Header-->
+        <%template src="_header.html"%>
+        <!--/Header-->
+          <div class="content_body ">
+          
+            <section class="contact_map">
+                <div class="contact_map_mask"></div>
+                <div class="contact_map_info">
+                    <span class="contact_abs position1 animated fadeInDown"></span>
+                    <span class="contact_map_txt">Capa Tools Co.,Limited</span>
+                </div>
+            </section>
+            <section class="contact_info">
+                <p class="contact_info_title">We're Waiting To Assist You!</p>
+                <div class="contact_info_block">
+                    <span class="contact_block_mask"></span>
+                    <span class="contact_block_icn contact_abs2"></span><br />
+                    <span class="contact_block_txt">{site.address}</span>
+                </div>
+                <div class="contact_info_block">
+                <span class="contact_block_mask"></span>
+                    <span class="contact_block_icn contact_call"></span><br />
+                    <span class="contact_block_txt">{site.tel}</span>
+                </div>
+                <div class="contact_info_block">
+                    <a href="mailto:{site.email}">
+                    <span class="contact_block_mask"></span>
+                    <span class="contact_block_icn contact_msg"></span><br />
+                    <span class="contact_block_txt">{site.email}</span>
+                    </a>
+                </div>          
+            </section>
+        </div>
+        <!--Footer-->
+        <%template src="_footer.html"%>
+        <!--/Footer-->
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

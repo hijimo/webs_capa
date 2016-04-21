@@ -14,10 +14,14 @@
     <AssemblyName>DTcms.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -466,9 +470,13 @@
     <Content Include="templates\main\about.png" />
     <Content Include="templates\main\about.xml" />
     <Content Include="templates\main\cart.html" />
-    <Content Include="templates\main\content.html" />
+    <Content Include="templates\main\contact.html" />
+    <Content Include="templates\main\css\about.css" />
+    <Content Include="templates\main\css\contact.css" />
     <Content Include="templates\main\css\flexslider.css" />
     <Content Include="templates\main\css\lightbox.css" />
+    <Content Include="templates\main\css\news.css" />
+    <Content Include="templates\main\css\product.css" />
     <Content Include="templates\main\css\style.css" />
     <Content Include="templates\main\down.html" />
     <Content Include="templates\main\down_list.html" />
@@ -513,6 +521,7 @@
     <Content Include="templates\main\photo.html" />
     <Content Include="templates\main\photo_list.html" />
     <Content Include="templates\main\photo_show.html" />
+    <Content Include="templates\main\product_list.html" />
     <Content Include="templates\main\register.html" />
     <Content Include="templates\main\repassword.html" />
     <Content Include="templates\main\search.html" />
@@ -532,6 +541,7 @@
     <Content Include="templates\main\_header.html" />
     <Content Include="templates\main\_share_js.html" />
     <Content Include="templates\main\_ucenter_nav.html" />
+    <Content Include="templates\main\product_show.html" />
     <Content Include="watermark.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1163,6 +1173,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="xmlconfig\alipaypc.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\main\aboutus.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

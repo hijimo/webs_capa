@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/6/7 12:25:13.
-		本页面代码由DTcms模板引擎生成于 2015/6/7 12:25:13. 
+		This page was created by DTcms Template Engine at 16/4/20 下午7:00:26.
+		本页面代码由DTcms模板引擎生成于 16/4/20 下午7:00:26. 
 	*/
 
 	base.OnInit(e);
@@ -37,57 +37,38 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/js/common.js\"></");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n<!--Header-->\r\n");
 
-	templateBuilder.Append("<div class=\"header\">\r\n  <div class=\"header-wrap\">\r\n    <div class=\"section\">\r\n      <div class=\"left-box\">\r\n        <a class=\"logo\" href=\"");
+	templateBuilder.Append("<div class=\"header\">\r\n  <div class=\"header_logo\">\r\n    <a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
-	templateBuilder.Append("\">");
-	templateBuilder.Append(Utils.ObjectToStr(site.name));
-	templateBuilder.Append("</a>\r\n        <p class=\"nav\">\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("news"));
+	templateBuilder.Append("\">\r\n        <span class=\"header_logo_img\"></span><br/>\r\n        <span class=\"header_logo_txt\">CAPA TOOLS CO.,LIMITED</span>\r\n    </a>\r\n  </div>\r\n  <a class=\"alibaba\">\r\n  <!-- ALIBABA.COM TRADE ASSURANCE CODE BEGIN -->\r\n<script id=\"ali-ta-embed-script\" src=\"//u.alicdn.com/js/5v/run/ta/embed.js?e=360\" type=\"text/javascript\" data-token=\"ID1t_vtHmE4fgz-DOP7DfDV05L5Nof58_pLv2iyumXlRag*\" ></");
+	templateBuilder.Append("script>\r\n<!-- ALIBABA.COM TRADE ASSURANCE CODE END -->\r\n  </a>\r\n  <div class=\"header_wrap\">\r\n    <ul class=\"header_menu\">\r\n      <li class=\"header_menu_itm before1\"><a href=\"");
+	templateBuilder.Append(linkurl("product_list",0));
 
-	templateBuilder.Append("\">资讯</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("goods"));
+	templateBuilder.Append("\">Products</a>\r\n        <ul class=\"sub_menu\">\r\n            ");
+	DataTable categoryList_header = get_category_child_list("product",0);
 
-	templateBuilder.Append("\">商城</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("video"));
+	foreach(DataRow dr in categoryList_header.Rows)
+	{
 
-	templateBuilder.Append("\">视频</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("photo"));
+	templateBuilder.Append("\r\n                    \r\n                    <li class=\"sub_menuitm\">\r\n                        <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
+	templateBuilder.Append(linkurl("product_list",Utils.ObjectToStr(dr["id"])));
 
-	templateBuilder.Append("\">图片</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("down"));
+	templateBuilder.Append("\">\r\n                    " + Utils.ObjectToStr(dr["title"]) + "\r\n                        </a>\r\n                    </li>\r\n                ");
+	}	//end for if
 
-	templateBuilder.Append("\">下载</a>\r\n        </p>\r\n      </div>\r\n      <div class=\"search\">\r\n        <input id=\"keywords\" name=\"keywords\" class=\"input\" type=\"text\" onkeydown=\"if(event.keyCode==13){SiteSearch('");
-	templateBuilder.Append(linkurl("search"));
+	templateBuilder.Append("\r\n        </ul>\r\n      </li>\r\n      <li class=\"header_menu_itm\"><a href=\"");
+	templateBuilder.Append(linkurl("aboutus"));
 
-	templateBuilder.Append("', '#keywords');return false};\" placeholder=\"输入回车搜索\" x-webkit-speech=\"\" />\r\n        <input class=\"submit\" type=\"submit\" onclick=\"SiteSearch('");
-	templateBuilder.Append(linkurl("search"));
+	templateBuilder.Append("\">About US</a></li>\r\n      <li class=\"header_menu_itm\"><a href=\"");
+	templateBuilder.Append(linkurl("news_list",0));
 
-	templateBuilder.Append("', '#keywords');\" value=\"搜索\" />\r\n      </div>\r\n      <div class=\"right-box\">\r\n      <script type=\"text/javascript\">\r\n			$.ajax({\r\n				type: \"POST\",\r\n				url: \"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=user_check_login\",\r\n				dataType: \"json\",\r\n				timeout: 20000,\r\n				success: function (data, textStatus) {\r\n					if (data.status == 1) {\r\n						$(\"#menu\").prepend('<li class=\"line\"><a href=\"");
-	templateBuilder.Append(linkurl("usercenter","exit"));
+	templateBuilder.Append("\">News</a></li>\r\n      <li class=\"header_menu_itm\"><a href=\"");
+	templateBuilder.Append(linkurl("down_list,0"));
 
-	templateBuilder.Append("\">退出</a></li>');\r\n						$(\"#menu\").prepend('<li class=\"login\"><em></em><a href=\"");
-	templateBuilder.Append(linkurl("usercenter","index"));
+	templateBuilder.Append("\">Download</a></li>\r\n      <li class=\"header_menu_itm\"><a href=\"");
+	templateBuilder.Append(linkurl("contact"));
 
-	templateBuilder.Append("\">会员中心</a></li>');\r\n					} else {\r\n						$(\"#menu\").prepend('<li class=\"line\"><a href=\"");
-	templateBuilder.Append(linkurl("register"));
-
-	templateBuilder.Append("\">注册</a></li>');\r\n						$(\"#menu\").prepend('<li class=\"login\"><em></em><a href=\"");
-	templateBuilder.Append(linkurl("login"));
-
-	templateBuilder.Append("\">登录</a></li>');\r\n					}\r\n				}\r\n			});\r\n		</");
-	templateBuilder.Append("script>\r\n        <ul id=\"menu\">\r\n          <li>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("cart"));
-
-	templateBuilder.Append("\">购物车<span id=\"shoppingCartCount\"><script type=\"text/javascript\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=view_cart_count\"></");
-	templateBuilder.Append("script></span>件</a>\r\n          </li>\r\n          <li><a href=\"");
-	templateBuilder.Append(linkurl("content","contact"));
-
-	templateBuilder.Append("\">联系我们</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
+	templateBuilder.Append("\">Contact US</a></li>\r\n      <li class=\"header_menu_itm\"></li>\r\n    </ul>\r\n    <div class=\"header_searchs right\">\r\n      <input type=\"text\" value=\"\" placeholder=\"Search Products\" class=\"search_input\">\r\n      <span class=\"header_search_btn\"></span>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n  </div>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n<!--/Header-->\r\n\r\n<div class=\"section clearfix\">\r\n  <div class=\"line30\"></div>\r\n\r\n  <div class=\"info-wrap\">\r\n    <!--左侧导航-->\r\n    ");
@@ -243,44 +224,37 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(model.content));
 	templateBuilder.Append("\r\n        </div>\r\n    \r\n      </div>\r\n      <!--/系统消息-->\r\n      \r\n    </div>\r\n    <!--/右侧内容-->\r\n  </div>\r\n</div>\r\n\r\n<!--Footer-->\r\n");
 
-	templateBuilder.Append("<div class=\"footer clearfix\">\r\n  <div class=\"foot-nav\">\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("index"));
+	templateBuilder.Append("<div class=\"footer\">\r\n  <div class=\"footer_content\">\r\n    \r\n    <div class=\"footer_conent_part\">\r\n        <div class=\"footer_content_part_title\">Products</div>\r\n        <ul class=\"footer_content_part_body\">\r\n            \r\n            ");
+	DataTable categoryList_footer = get_category_child_list("product",0,7);
 
-	templateBuilder.Append("\">首 页</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("content","about"));
+	foreach(DataRow dr in categoryList_footer.Rows)
+	{
 
-	templateBuilder.Append("\">关于我们</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("news"));
+	templateBuilder.Append("\r\n                    \r\n                    <li class=\"footer_part_li\">\r\n                        <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
+	templateBuilder.Append(linkurl("product_list",Utils.ObjectToStr(dr["id"])));
 
-	templateBuilder.Append("\">新闻资讯</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("goods"));
+	templateBuilder.Append("\">\r\n                    " + Utils.ObjectToStr(dr["title"]) + "\r\n                        </a>\r\n                    </li>\r\n                ");
+	}	//end for if
 
-	templateBuilder.Append("\">购物商城</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("video"));
+	templateBuilder.Append("\r\n       </ul>\r\n    </div>\r\n    <div class=\"footer_conent_part\">\r\n      \r\n        <div class=\"footer_content_part_title\">News</div>\r\n        <ul class=\"footer_content_part_body\">\r\n          ");
+	DataTable categoryList_footer2 = get_category_child_list("news",0,7);
 
-	templateBuilder.Append("\">视频专区</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("down"));
+	foreach(DataRow dr in categoryList_footer2.Rows)
+	{
 
-	templateBuilder.Append("\">资源下载</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("photo"));
+	templateBuilder.Append("\r\n                    \r\n                    <li class=\"footer_part_li\">\r\n                        <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
+	templateBuilder.Append(linkurl("news_list",Utils.ObjectToStr(dr["id"])));
 
-	templateBuilder.Append("\">图片分享</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("feedback"));
+	templateBuilder.Append("\">\r\n                            " + Utils.ObjectToStr(dr["title"]) + "\r\n                        </a>\r\n                    </li>\r\n                ");
+	}	//end for if
 
-	templateBuilder.Append("\">留言反馈</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">友情链接</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("content","contact"));
-
-	templateBuilder.Append("\">联系我们</a>\r\n  </div>\r\n  <div class=\"copyright\">\r\n    <p>版权所有 ");
-	templateBuilder.Append(site.company.ToString());
-
-	templateBuilder.Append(" 粤ICP备11064298号 DTcms版本号：");
-	templateBuilder.Append(Utils.GetVersion().ToString());
-
-	templateBuilder.Append("</p>\r\n    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>\r\n    <p><script src=\"http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic\" language=\"javascript\"></");
-	templateBuilder.Append("script></p>\r\n  </div>\r\n</div>");
+	templateBuilder.Append("\r\n        </ul>\r\n    </div>\r\n    <div class=\"footer_conent_part\">\r\n      \r\n        <div class=\"footer_content_part_title\">Contacts</div>\r\n        <ul class=\"footer_content_part_body\">\r\n          <li class=\"contactitm\"><i></i>");
+	templateBuilder.Append(Utils.ObjectToStr(site.address));
+	templateBuilder.Append("</li>\r\n          <li class=\"contactitm\"><i></i>");
+	templateBuilder.Append(Utils.ObjectToStr(site.tel));
+	templateBuilder.Append("</li>\r\n          <li class=\"contactitm\"><i></i>");
+	templateBuilder.Append(Utils.ObjectToStr(site.email));
+	templateBuilder.Append("</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <div class=\"copyright\">\r\n    <span>Copyright &copy; 2013-2016 CAPA Tools Co.,Limted. ICP:浙12345</span>\r\n    <a href=\"\" class=\"icn_youtube right mt10\"></a>\r\n    <a href=\"\" class=\"icn_facebook right mt10\"></a>\r\n    \r\n  </div>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n<!--/Footer-->\r\n</body>\r\n</html>");
