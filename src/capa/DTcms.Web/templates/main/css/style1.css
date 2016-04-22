@@ -79,14 +79,14 @@ html,body,.main
 
 	 border: solid 1px #f64e29;
 	 border-radius: 5px;
-	 margin-top: 9px;
+	 margin-top: 7px;
 	 font-size: 0;
 	 padding-left: 5px;
 	 background-color: #fff;
 	 margin-right: 20px;
 }
 .search_input{
-	height: 26px;
+	height: 28px;
 	width: 167px;
 	font-size: 15px;
 	vertical-align: top;
@@ -99,7 +99,7 @@ html,body,.main
 	width: 267px;
 }
 .header_search_btn{
-	height: 26px;
+	height: 28px;
 	width: 28px;
 	display: inline-block;
 	margin-right: -1px;
@@ -171,6 +171,129 @@ html,body,.main
 	
 	width: auto;
 	
+}
+.contactitm
+{
+    line-height:2;
+}
+.contactitm i
+{
+    display:inline-block;
+    width:20px;
+}
+.search_title
+{
+    margin-bottom:20px;
+}
+.search_title h2
+{
+    display: inline-block;
+    padding-right: 10px;
+    width: auto;
+    color: #333;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 25px;
+}
+.search_title i
+{
+    color:#999;
+    font-style:normal;
+}
+.news .content_body
+{
+    padding:20px;
+    color:#9e9999;
+    padding-right:40px;
+}
+.news_item
+{
+    margin-bottom:15px;
+}
+.news_item_date
+{
+    display:inline-block;
+    padding:12px;
+    background-color:#000;
+    color:#fff;
+    max-width:81px;
+    text-align:center;
+}
+.news_date_day
+{
+    font-size:30px;
+}
+.news_date_month
+{
+    font-size:14px;
+    white-space:nowrap;
+    
+}
+.news_item_title
+{
+    font-size:20px;
+    color:#3f3f3f;
+    vertical-align: 35px;
+    padding-left: 10px;
+
+}
+.news_article
+{
+    height:40px;
+    line-height:40px;
+    margin:10px 0;
+    color:##9a9999;
+    border:solid 1px #e5e5e5;
+}
+.news_article span
+{
+    height:100%;
+    border-right:solid 1px #e5e5e5;
+    display:inline-block;
+    min-width:80px;
+    padding: 0 10px;
+    
+}
+.news_item_img
+{
+    width:550px;
+    height:280px;
+    position:absolute;
+}
+.news_item_dec
+{
+    min-height:280px;
+    margin-left:600px;
+    font-size:18px;
+    position:relative;
+    padding-top:40px;
+        box-sizing: border-box;
+}
+.news_item_readmore
+{
+    display:inline-block;position: absolute;
+    right: 10px;
+    bottom:0px;
+    color:#3f3f3f;
+}
+.page-box div.digg a
+{
+    color:#3f3f3f;
+}
+.news_show .list-auto
+{
+    margin-right:0;
+    padding:0 60px;
+}
+.list_tag_title
+{
+    font-size:24px;
+    margin-bottom:10px;
+    
+}
+.list_tag_title a
+{
+    color:#303030;
 }
 .index_slider.theme-default{
 	position: absolute;
@@ -269,6 +392,10 @@ html,body,.main
     display:inline-block;
     margin-top:25px;
     font-size:12px;
+}
+.more_btn:hover,.other_btn:hover
+{
+    color:inherit;
 }
 .other_btn
 {
@@ -577,6 +704,33 @@ input.small{ width:50px; }
 .input{ display:inline; margin-right:5px; padding:7px; height:20px; line-height:20px; vertical-align:middle; background:#fff; color:#999px; border:1px solid #e8e8e8; border-radius:2px; }
 .select{ padding:7px; border:1px solid #e8e8e8; line-height:20px; }
 
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1461292632_5507889.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1461292632_5507889.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1461292632_5507889.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1461292632_5507889.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1461292632_5507889.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.icn_font{
+    font-family: iconfont!important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+.icn_locate:before
+{
+    content:'\e600'
+}
+.icn_email:before
+{
+    content:'\e601'
+}
+.icn_phone:before
+{
+    content:'\e602'
+}                    
 @media only screen and (min-width:1921px) {
 	.wrap{
 		background-size: 100% 100%;

@@ -1,4 +1,18 @@
-﻿<div class="header">
+﻿<script type="text/javascript">
+    function SiteSearch(send_url, divTgs, channel_name) {
+        var strwhere = "";
+        if (channel_name !== undefined) {
+            strwhere = "&channel_name=" + channel_name
+        }
+        var str = $.trim($(divTgs).val());
+        if (str.length > 0 && str != "输入关健字") {
+            window.location.href = send_url + "?keyword=" + encodeURI($(divTgs).val()) + strwhere;
+        }
+        return false;
+    }
+
+</script>
+<div class="header">
   <div class="header_logo">
     <a href="<%linkurl("index")%>">
         <span class="header_logo_img"></span><br/>
@@ -32,8 +46,8 @@
       <li class="header_menu_itm"></li>
     </ul>
     <div class="header_searchs right">
-      <input type="text" value="" placeholder="Search Products" class="search_input">
-      <span class="header_search_btn"></span>
+      <input type="text" value="" onkeydown="if(event.keyCode==13){SiteSearch('<%linkurl("search")%>', '#keywords');return false};"x-webkit-speech="" id="keywords" placeholder=Search Products"  class="search_input">
+      <span class="header_search_btn" onclick="SiteSearch('<%linkurl("search")%>', '#keywords');" ></span>
     </div>
     <div class="clearfix"></div>
   </div>

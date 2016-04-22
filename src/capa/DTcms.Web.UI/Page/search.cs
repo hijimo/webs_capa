@@ -24,6 +24,8 @@ namespace DTcms.Web.UI.Page
             page = DTRequest.GetQueryInt("page", 1);
             keyword = DTRequest.GetQueryString("keyword").Replace("'", string.Empty);
             channel = DTRequest.GetQueryString("channel").Replace("'", string.Empty);
+            // 默认 产品
+            channel = channel == "" ? "product" : channel;
         }
 
         /// <summary>

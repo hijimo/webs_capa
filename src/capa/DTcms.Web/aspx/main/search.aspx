@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 16/4/21 下午1:52:42.
-		本页面代码由DTcms模板引擎生成于 16/4/21 下午1:52:42. 
+		This page was created by DTcms Template Engine at 16/4/22 下午4:09:39.
+		本页面代码由DTcms模板引擎生成于 16/4/22 下午4:09:39. 
 	*/
 
 	base.OnInit(e);
@@ -26,15 +26,10 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("css/pagination.css\" rel=\"stylesheet\" />\r\n<link href=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/css/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("scripts/jquery/jquery-1.11.2.min.js\"></");
-	templateBuilder.Append("script>\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
-	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/js/common.js\"></");
-	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n<!--Header-->\r\n");
+	templateBuilder.Append("/css/style1.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n</head>\r\n\r\n<body>\r\n <div class=\"main news\">\r\n    <div class=\"wrap\">\r\n      <div class=\"content\">\r\n        <!--Header-->\r\n        ");
 
-	templateBuilder.Append("<div class=\"header\">\r\n  <div class=\"header_logo\">\r\n    <a href=\"");
+	templateBuilder.Append("<script type=\"text/javascript\">\r\n    function SiteSearch(send_url, divTgs, channel_name) {\r\n        var strwhere = \"\";\r\n        if (channel_name !== undefined) {\r\n            strwhere = \"&channel_name=\" + channel_name\r\n        }\r\n        var str = $.trim($(divTgs).val());\r\n        if (str.length > 0 && str != \"输入关健字\") {\r\n            window.location.href = send_url + \"?keyword=\" + encodeURI($(divTgs).val()) + strwhere;\r\n        }\r\n        return false;\r\n    }\r\n\r\n</");
+	templateBuilder.Append("script>\r\n<div class=\"header\">\r\n  <div class=\"header_logo\">\r\n    <a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\">\r\n        <span class=\"header_logo_img\"></span><br/>\r\n        <span class=\"header_logo_txt\">CAPA TOOLS CO.,LIMITED</span>\r\n    </a>\r\n  </div>\r\n  <a class=\"alibaba\">\r\n  <!-- ALIBABA.COM TRADE ASSURANCE CODE BEGIN -->\r\n<script id=\"ali-ta-embed-script\" src=\"//u.alicdn.com/js/5v/run/ta/embed.js?e=360\" type=\"text/javascript\" data-token=\"ID1t_vtHmE4fgz-DOP7DfDV05L5Nof58_pLv2iyumXlRag*\" ></");
@@ -65,78 +60,63 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">Download</a></li>\r\n      <li class=\"header_menu_itm\"><a href=\"");
 	templateBuilder.Append(linkurl("contact"));
 
-	templateBuilder.Append("\">Contact US</a></li>\r\n      <li class=\"header_menu_itm\"></li>\r\n    </ul>\r\n    <div class=\"header_searchs right\">\r\n      <input type=\"text\" value=\"\" placeholder=\"Search Products\" class=\"search_input\">\r\n      <span class=\"header_search_btn\"></span>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n  </div>\r\n</div>");
+	templateBuilder.Append("\">Contact US</a></li>\r\n      <li class=\"header_menu_itm\"></li>\r\n    </ul>\r\n    <div class=\"header_searchs right\">\r\n      <input type=\"text\" value=\"\" onkeydown=\"if(event.keyCode==13){SiteSearch('");
+	templateBuilder.Append(linkurl("search"));
+
+	templateBuilder.Append("', '#keywords');return false};\"x-webkit-speech=\"\" id=\"keywords\" placeholder=Search Products\"  class=\"search_input\">\r\n      <span class=\"header_search_btn\" onclick=\"SiteSearch('");
+	templateBuilder.Append(linkurl("search"));
+
+	templateBuilder.Append("', '#keywords');\" ></span>\r\n    </div>\r\n    <div class=\"clearfix\"></div>\r\n  </div>\r\n</div>");
 
 
-	templateBuilder.Append("\r\n<!--/Header-->\r\n\r\n<div class=\"section clearfix\">\r\n  <!--右边-->\r\n  <div class=\"list-right\">\r\n    <div class=\"sidebar-box\">\r\n      <div class=\"line30\"></div>\r\n      <h3>栏目导航</h3>\r\n      <ul class=\"navbar\">\r\n        ");
-	DataTable contentlist = get_article_list("content", 0, 0, "status=0");
-
-	foreach(DataRow dr in contentlist.Rows)
-	{
-
-	templateBuilder.Append("\r\n        <li>\r\n          <h4><a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
-	templateBuilder.Append(linkurl("content",Utils.ObjectToStr(dr["call_index"])));
-
-	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a></h4>\r\n        </li>\r\n        ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n        <li>\r\n          <h4><a href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">留言反馈</a></h4>\r\n        </li>\r\n        <li>\r\n          <h4><a href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">友情链接</a></h4>\r\n        </li>\r\n      </ul>\r\n      \r\n      <div class=\"line20\"></div>\r\n      <h3>推荐资讯</h3>\r\n      <div class=\"focus-list\">\r\n        <ul>\r\n          ");
-	DataTable redNews = get_article_list("news", 0, 4, "status=0 and is_red=1 and img_url<>''");
-
-	foreach(DataRow dr in redNews.Rows)
-	{
-
-	templateBuilder.Append("\r\n          <li>\r\n            <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
-	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
-
-	templateBuilder.Append("\">\r\n              <b><img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" /></b>\r\n              <span>" + Utils.ObjectToStr(dr["title"]) + "</span>\r\n            </a>\r\n          </li>\r\n          ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n        </ul>\r\n      </div>\r\n      \r\n    </div>\r\n  </div>\r\n  <!--/右边-->\r\n  \r\n  <!--左边-->\r\n  <div class=\"list-auto\">\r\n    <!--取得一个DataTable-->\r\n    ");
+	templateBuilder.Append("\r\n        <!--/Header-->\r\n        \r\n          <div class=\"content_body \">\r\n           ");
 	DataTable list = get_search_list(15, out totalcount);
 
 	templateBuilder.Append("\r\n    <!--取得分页页码列表-->\r\n    ");
 	 pagelist = get_page_link(15, page, totalcount, linkurl("search","?channel=" + channel + "&keyword=" + Server.UrlEncode(keyword) + "&page=__id__"));
 
-	templateBuilder.Append("\r\n    <div class=\"ntitle\">\r\n      <h2><a>站内搜索</a></h2>\r\n      <i>搜索关健字： <b class=\"blue\">");
+	templateBuilder.Append("\r\n   \r\n\r\n               <div class=\"search_title\">\r\n                    <h2>Site Search</h2>\r\n                <i>KeyWords： <b class=\"blue\">");
 	templateBuilder.Append(Utils.ObjectToStr(keyword));
-	templateBuilder.Append("</b> ，共有 <b class=\"red\">");
+	templateBuilder.Append("</b> ，All  <b class=\"red\">");
 	templateBuilder.Append(Utils.ObjectToStr(totalcount));
-	templateBuilder.Append("</b> 条记录</i>\r\n    </div>\r\n    <ul class=\"n-list\">\r\n      ");
+	templateBuilder.Append("</b>  Records</i>\r\n               </div>\r\n            \r\n               <div class=\"news_list\">\r\n                      ");
 	foreach(DataRow dr in list.Rows)
 	{
 
-	templateBuilder.Append("\r\n      <li>\r\n        <h2><a target=\"_blank\" href=\"" + Utils.ObjectToStr(dr["link_url"]) + "\">" + Utils.ObjectToStr(dr["title"]) + "</a></h2>\r\n        <div class=\"note\">\r\n          ");
-	if (Utils.ObjectToStr(dr["img_url"])!="")
-	{
+	templateBuilder.Append("\r\n                      <div class=\"news_item\">\r\n                          <div class=\"news_item_header\">\r\n                              <span class=\"news_item_date\">\r\n                                    <span class=\"news_date_day\">\r\n                                    ");
+	                                    templateBuilder.Append(Convert.ToDateTime(Utils.ObjectToStr(dr["add_time"])).ToString("dd"));
+	                                      
+	                                    
 
-	templateBuilder.Append("\r\n          <b><img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" /></b>\r\n          ");
-	}	//end for if
+	templateBuilder.Append("\r\n                                    </span>\r\n                                    <br />\r\n                                    <span class=\"news_date_month\">\r\n                                     ");
+	                                      templateBuilder.Append(Convert.ToDateTime(Utils.ObjectToStr(dr["add_time"])).ToString("MMMM / yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo));
+	                                        
+	                                        
 
-	templateBuilder.Append("\r\n          <p>" + Utils.ObjectToStr(dr["remark"]) + "</p>\r\n          <div class=\"info\">\r\n            <span class=\"time\">" + Utils.ObjectToStr(dr["add_time"]) + "</span>\r\n            <span class=\"comm\"><script type=\"text/javascript\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=view_comment_count&id=" + Utils.ObjectToStr(dr["id"]) + "\"></");
-	templateBuilder.Append("script>人评论</span>\r\n            <span class=\"view\"><script type=\"text/javascript\" src=\"");
+	templateBuilder.Append("\r\n                                    </span>\r\n                              </span>\r\n                              <span class=\"news_item_title\">\r\n                                <a href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
+
+	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a>\r\n                              </span>\r\n                          </div>\r\n                          <div class=\"news_article\">\r\n                              <span>Published In: </span>\r\n                              <span>Hits: <script type=\"text/javascript\" src=\"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("tools/submit_ajax.ashx?action=view_article_click&id=" + Utils.ObjectToStr(dr["id"]) + "\"></");
-	templateBuilder.Append("script>次浏览</span>\r\n          </div>\r\n        </div>\r\n      </li>\r\n      ");
+	templateBuilder.Append("script></span>\r\n                              <span>Comment: <script type=\"text/javascript\"  src=\"");
+	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
+	templateBuilder.Append("tools/submit_ajax.ashx?action=view_comment_count&id=" + Utils.ObjectToStr(dr["id"]) + "\"></");
+	templateBuilder.Append("script></span>\r\n                          </div>\r\n                          <div class=\"news_item_content\">\r\n                              <img class=\"tj_lazy news_item_img\" data-original=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" />\r\n                              <p class=\"news_item_dec\">\r\n                                " + Utils.ObjectToStr(dr["remark"]) + "<br />\r\n                                <a class=\"news_item_readmore\" href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
+
+	templateBuilder.Append("\">Read More</a>\r\n                              </p>\r\n                          </div>\r\n                      </div>\r\n                     \r\n                      ");
 	}	//end for if
 
 	if (totalcount==0)
 	{
 
-	templateBuilder.Append("\r\n      <div class=\"nodata\">很抱歉，目前尚未查找到符合条件的信息！</div>\r\n      ");
+	templateBuilder.Append("\r\n                          <div class=\"nodata\">No Records！</div>\r\n                      ");
 	}	//end for if
 
-	templateBuilder.Append("\r\n    </ul>\r\n    \r\n    <!--页码列表-->\r\n    <div class=\"page-box\">\r\n      <div class=\"digg\">");
+	templateBuilder.Append("\r\n               </div>\r\n               \r\n    <!--页码列表-->\r\n    <div class=\"page-box\">\r\n      <div class=\"digg\">");
 	templateBuilder.Append(Utils.ObjectToStr(pagelist));
-	templateBuilder.Append("</div>\r\n    </div>\r\n    <!--/页码列表-->\r\n  </div>\r\n  <!--/左边-->\r\n\r\n</div>\r\n\r\n<!--Footer-->\r\n");
+	templateBuilder.Append("</div>\r\n        <div class=\"clearfix\">\r\n        </div>\r\n    </div>\r\n    <!--/页码列表-->\r\n          </div>\r\n\r\n  \r\n\r\n <!--Footer-->\r\n        ");
 
 	templateBuilder.Append("<div class=\"footer\">\r\n  <div class=\"footer_content\">\r\n    \r\n    <div class=\"footer_conent_part\">\r\n        <div class=\"footer_content_part_title\">Products</div>\r\n        <ul class=\"footer_content_part_body\">\r\n            \r\n            ");
 	DataTable categoryList_footer = get_category_child_list("product",0,7);
@@ -162,16 +142,22 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">\r\n                            " + Utils.ObjectToStr(dr["title"]) + "\r\n                        </a>\r\n                    </li>\r\n                ");
 	}	//end for if
 
-	templateBuilder.Append("\r\n        </ul>\r\n    </div>\r\n    <div class=\"footer_conent_part\">\r\n      \r\n        <div class=\"footer_content_part_title\">Contacts</div>\r\n        <ul class=\"footer_content_part_body\">\r\n          <li class=\"contactitm\"><i></i>");
+	templateBuilder.Append("\r\n        </ul>\r\n    </div>\r\n    <div class=\"footer_conent_part\">\r\n      \r\n        <div class=\"footer_content_part_title\">Contacts</div>\r\n        <ul class=\"footer_content_part_body\">\r\n          <li class=\"contactitm\"><i class=\"icn_font icn_locate\"></i>");
 	templateBuilder.Append(Utils.ObjectToStr(site.address));
-	templateBuilder.Append("</li>\r\n          <li class=\"contactitm\"><i></i>");
+	templateBuilder.Append("</li>\r\n          <li class=\"contactitm\"><i class=\"icn_font icn_phone\"></i>");
 	templateBuilder.Append(Utils.ObjectToStr(site.tel));
-	templateBuilder.Append("</li>\r\n          <li class=\"contactitm\"><i></i>");
+	templateBuilder.Append("</li>\r\n          <li class=\"contactitm\"><i class=\"icn_font icn_email\"></i>");
 	templateBuilder.Append(Utils.ObjectToStr(site.email));
-	templateBuilder.Append("</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <div class=\"copyright\">\r\n    <span>Copyright &copy; 2013-2016 CAPA Tools Co.,Limted. ICP:浙12345</span>\r\n    <a href=\"\" class=\"icn_youtube right mt10\"></a>\r\n    <a href=\"\" class=\"icn_facebook right mt10\"></a>\r\n    \r\n  </div>\r\n</div>");
+	templateBuilder.Append("</li>\r\n        </ul>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <div class=\"copyright\">\r\n    <span>Copyright &copy; 2013-2016 CAPA Tools Co.,Limted. ");
+	templateBuilder.Append(Utils.ObjectToStr(site.crod));
+	templateBuilder.Append("</span>\r\n    <a href=\"\" class=\"icn_youtube right mt10\"></a>\r\n    <a href=\"\" class=\"icn_facebook right mt10\"></a>\r\n    \r\n  </div>\r\n</div>");
 
 
-	templateBuilder.Append("\r\n<!--/Footer-->\r\n</body>\r\n</html>");
+	templateBuilder.Append("\r\n        <!--/Footer-->\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/js/jquery-1.9.0.min.js\"></");
+	templateBuilder.Append("script>\r\n   <script type=\"text/javascript\">\r\n       $(\".tj_lazy\").lazyload({ effect: \"fadeIn\" });\r\n   </");
+	templateBuilder.Append("script>\r\n</body>\r\n</html>");
 	Response.Write(templateBuilder.ToString());
 }
 </script>

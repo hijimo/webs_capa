@@ -186,7 +186,8 @@ namespace DTcms.Web.UI
         /// <param name="_params">传输参数</param>
         protected string get_page_link(int pagesize, int pageindex, int totalcount, string _key, params object[] _params)
         {
-            return Utils.OutPageList(pagesize, pageindex, totalcount, linkurl(_key, _params), 8);
+            return Utils.OutENPageList(pagesize, pageindex, totalcount, linkurl(_key, _params), 8);
+            
         }
 
         /// <summary>

@@ -13,7 +13,6 @@ templateBuilder.Append(Utils.ObjectToStr({model.title}!="" ? {model.title} : "Al
 <meta name="description" content="{model.seo_description}" />
 <link href="{config.webpath}css/pagination.css" rel="stylesheet" />
 <link href="<%templateskin%>/css/style1.css" rel="stylesheet" type="text/css" />
-<link href="<%templateskin%>/css/news.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -25,7 +24,7 @@ templateBuilder.Append(Utils.ObjectToStr({model.title}!="" ? {model.title} : "Al
         <%template src="_header.html"%>
         <!--/Header-->
           <div class="content_body ">
-                <p><a href="javascript:;">
+                <p class="list_tag_title"><a href="javascript:;">
                 <%csharp%>
 templateBuilder.Append(Utils.ObjectToStr({model.title}!="" ? {model.title} : "All News"  ));
                                        
@@ -59,8 +58,8 @@ templateBuilder.Append(Utils.ObjectToStr({model.title}!="" ? {model.title} : "Al
                           <div class="news_article">
                               <span>Write By: {dr[author]}</span>
                               <span>Published In: </span>
-                              <span>Hits: <script type="text/javascript" defer=defer src="{config.webpath}tools/submit_ajax.ashx?action=view_article_click&id={dr[id]}"></script></span>
-                              <span>Comment: <script type="text/javascript" defer=defer src="{config.webpath}tools/submit_ajax.ashx?action=view_comment_count&id={dr[id]}"></script></span>
+                              <span>Hits: <script type="text/javascript"  src="{config.webpath}tools/submit_ajax.ashx?action=view_article_click&id={dr[id]}"></script></span>
+                              <span>Comment: <script type="text/javascript"  src="{config.webpath}tools/submit_ajax.ashx?action=view_comment_count&id={dr[id]}"></script></span>
                           </div>
                           <div class="news_item_content">
                               <img class="tj_lazy news_item_img" data-original="{dr[img_url]}" />
@@ -72,6 +71,10 @@ templateBuilder.Append(Utils.ObjectToStr({model.title}!="" ? {model.title} : "Al
                       </div>
                      
                       <%/foreach%>
+                      
+                      <%if({totalcount}==0)%>
+                          <div class="nodata">No Records！</div>
+                      <%/if%>
                </div>
                
     <!--页码列表-->
